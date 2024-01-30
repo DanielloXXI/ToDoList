@@ -4,6 +4,7 @@ import "./globals.scss";
 import Header from "../components/Header/page";
 import Footer from "../components/Footer/page";
 import { TaskContextProvider } from "@/contexts/TaskContext";
+import { PopupContextProvider } from "@/contexts/PopupContext";
 
 const inter = Inter({ subsets: ["latin"] });
 
@@ -22,14 +23,16 @@ export default function RootLayout({
   children: React.ReactNode;
 }>) {
   return (
-      <html lang="ru">
-        <body className={inter.className}>
-          <TaskContextProvider>
+    <html lang="ru">
+      <body className={inter.className}>
+        <TaskContextProvider>
+          <PopupContextProvider>
             <Header />
             {children}
             <Footer />
-          </TaskContextProvider>
-        </body>
-      </html>
+          </PopupContextProvider>
+        </TaskContextProvider>
+      </body>
+    </html>
   );
 }

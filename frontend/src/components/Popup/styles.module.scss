@@ -1,0 +1,161 @@
+.popup {
+	position: fixed;
+	top: 0;
+	left: 0;
+	width: 100%;
+	height: 100%;
+	justify-content: center;
+	align-items: center;
+	display: flex;
+	visibility: hidden;
+	opacity: 0;
+	transition:
+		visibility 0s,
+		opacity 0.5s linear;
+	z-index: 10;
+
+	&::before {
+		content: '';
+		position: absolute;
+		top: 0;
+		left: 0;
+		right: 0;
+		bottom: 0;
+		z-index: -1;
+		background: rgba(0, 0, 0, 0.15);
+	}
+
+	&_opened {
+		visibility: visible;
+		opacity: 1;
+	}
+
+	&__container {
+		background-color: var(--background-main-color, #fff);
+		padding: 32px 98px 32px 98px;
+		border-radius: 8px;
+		z-index: 10;
+		position: relative;
+		width: 550px;
+	}
+
+	&__close {
+		background-color: rgba(2, 2, 2, 0);
+		position: absolute;
+		top: 24px;
+		right: 24px;
+		border: none;
+		cursor: pointer;
+	}
+
+	&__title {
+		color: #21293a;
+		text-align: center;
+		font-size: 24px;
+		font-style: normal;
+		font-weight: 500;
+		line-height: 100%;
+	}
+
+	&__form {
+		display: flex;
+		flex-direction: column;
+		width: 100%;
+		max-width: 360px;
+	}
+
+	&__form_fieldset {
+		border: none;
+		margin-top: 10px;
+	}
+
+	&__form_text {
+		color: rgb(121, 130, 123);
+	}
+
+	&__form_input {
+		font-size: 14px;
+		font-style: normal;
+		font-family: inherit;
+		margin-top: 3px;
+		display: flex;
+		align-items: center;
+		width: 309px;
+		justify-content: space-between;
+		resize: none;
+		border-radius: 5px;
+		border: 2px solid rgb(121, 130, 123, 0.3);
+		font-size: 18px;
+		outline: none;
+		color: rgb(121, 130, 123);
+		width: 100%;
+	}
+
+	&__form_input_borders {
+		border: 1px solid #f44336;
+		margin-bottom: 0;
+	}
+
+	&__form_error {
+		color: #f44336;
+		font-size: 12px;
+		padding: 0;
+	}
+
+	&__form_input_description {
+		height: 150px;
+	}
+
+	&__form_input_select {
+		width: 100%;
+		border: 2px solid rgb(121, 130, 123, 0.3);
+		outline: none;
+		margin-top: 3px;
+		border-radius: 5px;
+		border: 2px solid rgb(121, 130, 123, 0.3);
+	}
+
+
+	&__form_buttons {
+		margin-top: 20px;
+		display: flex;
+		justify-content: space-between;
+	}
+
+	&__form_buttons_button {
+		color: white;
+		height: 40px;
+		display: flex;
+		align-items: center;
+		justify-content: center;
+		border-radius: 5px;
+		border: none;
+		width: 100%;
+		font-size: 16px;
+		cursor: pointer;
+		transition: 0.5s;
+	}
+
+	&__form_buttons_submit {
+		background-color: #4CAF50;
+	}
+
+	&__form_buttons_delete {
+		background-color: #f44336;
+		margin-left: 15px;
+	}
+
+	
+    &__form_buttons_disabled {
+        cursor: default;
+        background-color: #f44336;
+    }
+
+    &__form_buttons_button:hover {
+        opacity: 0.8;
+    }
+
+    &__form_buttons_disabled:hover {
+        opacity: 1;
+    }
+}

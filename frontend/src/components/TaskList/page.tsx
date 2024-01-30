@@ -1,6 +1,6 @@
 'use client'
 
-import { FC } from 'react'
+import { FC, useState } from 'react'
 
 import { useTaskContext } from '@/contexts/TaskContext'
 import Task from '../Task/page'
@@ -16,7 +16,7 @@ const TaskList: FC<Ipage> = ({ }) => {
         <section className={styles.taskList}>
             {
                 taskList.map((task, taskId) => (
-                    <Task text={task.task} id={taskId} discription={task.description} status={task.status} key={taskId}></Task>
+                    <Task text={task.task} id={taskId} description={task.description} status={task.status} key={taskId}></Task>
                 ))
             }
         </section>
