@@ -7,12 +7,12 @@ import classNames from 'classnames'
 
 interface ITask {
     text: string,
-    id: number,
+    _id: number,
     description: string,
     status: string,
 }
 
-const Task: FC<ITask> = ({ text, id, description, status }) => {
+const Task: FC<ITask> = ({ text, _id, description, status }) => {
 
     const { openPopup, setOpenPopup, setPopupValues, popupValues, statusArray, setStatusArray } = usePopupContext();
     const styleStatus = status === 'В процессе' ? 'task__buttons_status_process' : status === 'Ожидает выполнения' ? 'task__buttons_status_waiting' : 'task__buttons_status_ready';
@@ -22,9 +22,7 @@ const Task: FC<ITask> = ({ text, id, description, status }) => {
         setStatusArray(statusArray.sort(function (x, y) {
             return x == status ? -1 : y == status ? 1 : 0;
         }));
-        // console.log(`${statusArray} - Задаём порядок массива при открытии попапа`)
-        setPopupValues({ text, description, status, id });
-        // console.log()
+        setPopupValues({ text, description, status, _id });
         setOpenPopup(true);
     }
 

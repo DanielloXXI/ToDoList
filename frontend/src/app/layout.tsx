@@ -11,10 +11,10 @@ const inter = Inter({ subsets: ["latin"] });
 export const metadata: Metadata = {
   title: "ToDoList",
   description: "ToDoList",
-  // icons: {
-  //   icon: '/edit3.png',
-  //   shortcut: '/edit3.png',
-  // },
+  icons: {
+    icon: '/edit3.png',
+    shortcut: '/edit3.png',
+  },
 };
 
 export default function RootLayout({

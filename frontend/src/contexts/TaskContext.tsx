@@ -3,7 +3,7 @@ import React, { createContext, useState, FC, useContext } from "react";
 import type { PropsWithChildren, ReactNode } from 'react'
 
 interface ITaskContext {
-    taskList: [{task: string, status: string, description: string}] | never[],
+    taskList: [{text: string, status: string, description: string, _id: number},] | never[],
     setTaskList: any
 }
 

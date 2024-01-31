@@ -5,7 +5,7 @@ import type { PropsWithChildren, ReactNode } from 'react'
 interface IPopupContext {
     openPopup: boolean,
     setOpenPopup: any,
-    popupValues: {text: string, status: string, description: string, id: number | string},
+    popupValues: {text: string, status: string, description: string, _id: number | string},
     setPopupValues: any,
     statusArray: string[],
     setStatusArray: any,
@@ -19,7 +19,7 @@ interface IPopupContextProvider {
 
 const PopupContextProvider: FC<IPopupContextProvider> = ({children}) => {
     const [openPopup, setOpenPopup] = useState(false);
-    const [popupValues, setPopupValues] = useState({text: '', status: '', description: '', id: ''});
+    const [popupValues, setPopupValues] = useState({text: '', status: '', description: '', _id: ''});
     const [statusArray, setStatusArray] = useState(['В процессе', 'Ожидает выполнения', 'Выполнено']);
   return (
     <PopupContext.Provider value={{

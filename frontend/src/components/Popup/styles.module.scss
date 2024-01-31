@@ -144,11 +144,9 @@
 		background-color: #f44336;
 		margin-left: 15px;
 	}
-
 	
     &__form_buttons_disabled {
         cursor: default;
-        background-color: #f44336;
     }
 
     &__form_buttons_button:hover {
@@ -158,4 +156,5 @@
     &__form_buttons_disabled:hover {
         opacity: 1;
     }
+
 }

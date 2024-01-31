@@ -1,6 +1,5 @@
 export interface IShippingFields {
-	task: string,
+	text: string,
 	status: string,
 	description: string,
-	id?: number,
 }
