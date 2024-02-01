@@ -5,13 +5,15 @@
 ## Test
 
 - **Copy repo** 
-- **Try command "npm install", "npm run dev" for frontend and "npm install", "npm run dev" for backend**
+- **Try command "npm install", "npm run dev" for frontend.**
+-  **For backend you must have the MongoDB database downloaded, then try command "npm install", "mongod", "npm run dev".**
+-  **To run the application, run a parallel frontend and backend.**
+-  **The site opens at the link: http://localhost:3000 .**
 - **Wait... and... Congratulations!**
 
 ## Description
 
 This project will help you record your notes.
-
 
 ## Used technologies: 
 
