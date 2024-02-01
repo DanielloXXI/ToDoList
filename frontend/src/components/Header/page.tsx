@@ -7,9 +7,11 @@ import { SubmitHandler, useForm } from 'react-hook-form';
 import { useTaskContext } from '@/contexts/TaskContext';
 import classNames from 'classnames';
 import { addCard, getCards } from '@/utils/MainApi';
+import { usePopupContext } from '@/contexts/PopupContext';
 
 const Header: FC = () => {
-    const { taskList, setTaskList } = useTaskContext();
+    const { setTaskList } = useTaskContext();
+    const { setOpenInfoToolTip } = usePopupContext();
 
     const {
         register,
@@ -23,10 +25,11 @@ const Header: FC = () => {
         addCard(data.text, data.description, data.status).then(res => {
             setTaskList((taskList: []) => [...taskList, res.data]);
             reset();
-        }).catch((err) => console.log(err));
+        }).catch((err) => {console.log(err), setOpenInfoToolTip({status: false, opened: true})});
     };
 
     return (
+
         <header className={styles.header}>
             <form className={styles.header__form} onSubmit={handleSubmit(onSubmit)}>
                 <fieldset className={styles.header__form_fieldset}>

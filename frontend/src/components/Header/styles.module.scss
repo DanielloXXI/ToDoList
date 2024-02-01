@@ -46,6 +46,7 @@
         height: 40px;
         width: 170px;
         transition: 0.5s;
+        flex-shrink: 0;
     }
 
     &__form_button_disabled {
@@ -61,4 +62,26 @@
         opacity: 1;
     }
 
+}
+
+@media screen and (max-width:600px) {
+    .header {
+        width: 90%;
+
+        &__form_input {
+            font-size: 14px;
+            height: 30px;
+            width: 100%;
+        }
+    
+        &__form_button {
+            font-size: 14px;
+            height: 30px;
+            width: 110px;
+        }
+
+        &__form_error {
+            font-size: 11px;
+        }
+    }
 }

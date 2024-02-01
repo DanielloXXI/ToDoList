@@ -12,7 +12,7 @@ interface ICard {
 }
 
 export const getCards = async () => {
-    return await axios({ url: `/`, method: 'GET' });
+    return await axios.get('/');
 }
 
 export const addCard = async (text: string, description: string | null, status: string) => {

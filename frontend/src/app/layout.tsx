@@ -12,8 +12,8 @@ export const metadata: Metadata = {
   title: "ToDoList",
   description: "ToDoList",
   icons: {
-    icon: '/edit3.png',
-    shortcut: '/edit3.png',
+    icon: '/icon.png',
+    shortcut: '/icon.png',
   },
 };
 

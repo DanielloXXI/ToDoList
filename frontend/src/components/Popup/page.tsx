@@ -23,8 +23,8 @@ const Popup: FC<IPopup> = ({ }) => {
     setValue
   } = useForm<IShippingFields>({ mode: 'onChange' });
 
-  const { taskList, setTaskList } = useTaskContext();
-  const { openPopup, setOpenPopup, setPopupValues, popupValues, statusArray, setStatusArray } = usePopupContext();
+  const { setTaskList } = useTaskContext();
+  const { openPopup, setOpenPopup, setPopupValues, popupValues, statusArray, setStatusArray, setOpenInfoToolTip } = usePopupContext();
 
   useEffect(() => {
     const handleKeyDown = (event: KeyboardEvent) => {
@@ -57,6 +57,7 @@ const onSubmit: SubmitHandler<IShippingFields> = (data) => {
     })
     .catch(err => {
       console.log(err);
+      setOpenInfoToolTip({status: false, opened: true});
     })
 
 };
@@ -72,6 +73,7 @@ function onDeleteClick() {
     })
     .catch(err => {
       console.log(err);
+      setOpenInfoToolTip({status: false, opened: true});
     })
 }
 

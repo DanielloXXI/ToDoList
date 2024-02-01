@@ -2,6 +2,7 @@ import { FC } from 'react'
 import styles from './styles.module.scss'
 import TaskList from '../TaskList/page'
 import Popup from '../Popup/page'
+import InfoToolTip from '../InfoToolTip/page'
 
 const Main: FC = () => {
 
@@ -9,6 +10,7 @@ const Main: FC = () => {
     <main className={styles.main}>
       <TaskList></TaskList>
       <Popup></Popup>
+      <InfoToolTip></InfoToolTip>
     </main>
   )
 }
